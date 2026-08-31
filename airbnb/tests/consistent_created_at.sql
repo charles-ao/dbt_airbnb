@@ -1,0 +1,10 @@
+SELECT R.LISTING_ID, R.REVIEW_DATE, D.CREATED_AT FROM {{ref('fct_reviews')}} R
+LEFT JOIN  {{ref('dim_listings_cleansed')}} D
+ON R.LISTING_ID = D.LISTING_ID
+WHERE R.REVIEW_DATE < D.CREATED_AT
+
+
+
+
+
+
